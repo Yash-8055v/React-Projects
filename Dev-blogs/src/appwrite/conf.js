@@ -115,6 +115,31 @@ export class Service {
     } 
   }
 
+  async deleteFile(fileId) {
+    try {
+      await this.bucket.deleteFile(
+            config.appwriteBucketId,
+            fileId
+        );
+        return true;
+    } catch (error) {
+      console.log("Error deleting file:", error);
+      return false;
+    }   
+  }
+
+  async getFilePreview(fileId) {
+    try {
+      return this.bucket.getFilePreview(
+            config.appwriteBucketId,
+            fileId
+        );
+    } catch (error) {
+      console.log("Error getting file preview:", error);
+      return false;
+    }
+  }
+
 }
 
 
