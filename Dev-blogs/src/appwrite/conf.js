@@ -1,4 +1,4 @@
-import config from "../config/config";
+import config from "../config/config.js";
 import { Client, ID, Databases, Storage, Query } from "appwrite";
 
 
@@ -11,6 +11,8 @@ export class Service {
     this.Client
       .setEndpoint(config.appwriteUrl)
       .setProject(config.appwriteProjectId);
+      console.log("Appwrite Client initialized with endpoint:", config.appwriteUrl);
+
 
     this.databases = new Databases(this.Client);
     this.bucket = new Storage(this.Client);

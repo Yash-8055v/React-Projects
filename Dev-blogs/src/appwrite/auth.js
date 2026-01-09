@@ -10,8 +10,13 @@ export class AuthService {
     this.Client
       .setEndpoint(config.appwriteUrl)
       .setProject(config.appwriteProjectId);
+      console.log("Appwrite Auth Client initialized with endpoint:", config.appwriteUrl);
+
+      console.log("Project ID:", config.appwriteProjectId);
+
     
     this.account = new Account(this.Client);
+    console.log("Appwrite Account service initialized.", this.account);
   }
 
     async createAccount({email, password, name}) {
@@ -47,6 +52,8 @@ export class AuthService {
 
     async getCurrentUser() {
       try {
+        console.log("Project ID:", import.meta.env.VITE_APPWRITE_PROJECT_ID);
+
         return await this.account.get();
       } catch (error) {
         console.log("Appwrite service :: getCurrentUser :: error", error);
