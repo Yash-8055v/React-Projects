@@ -7,7 +7,7 @@ Each project focuses on understanding core React concepts through hands-on pract
 
 Beginner to intermediate React projects
 
-Practice with components, props, state, hooks, and routing
+Practice with components, props, state, hooks, and react-routing
 
 Real-world mini projects to strengthen fundamentals
 
